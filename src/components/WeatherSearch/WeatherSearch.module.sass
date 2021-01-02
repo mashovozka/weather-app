@@ -1,0 +1,46 @@
+.wrapper 
+  display: flex
+  flex-direction: column
+  justify-content: center
+.autocompleteWrapper
+  position: relative
+.input
+  height: 40px
+  width: 100%
+  margin: auto
+  border-radius: 10px 10px
+  border: 2px solid purple
+  box-sizing: border-box
+  overflow: hidden
+  padding-left: 20px
+  z-index: 2
+  &:focus
+    outline: none
+  .dropdown
+    position: absolute
+    width: 100%
+    top: 40px
+    background: white
+    z-index: 1
+    padding: 5px 0
+    border-top-width: 1px
+    border-top-style: solid
+    border-top-color: #800080
+    border-right-width: 1px
+    border-right-style: solid
+    border-right-color: purple
+    border-left-width: 1px
+    border-left-style: solid
+    border-left-color: purple
+    border-bottom-width: 1px
+    border-bottom-style: solid
+    border-bottom-color: purple
+    border-top: none
+    border-radius: 5px 5px
+
+@media only screen and (max-width: 660px)
+  .info
+    padding-left: 15px
+  .input
+    width: 90%
+    margin-left: 20px

@@ -1,0 +1,29 @@
+.locations
+  min-width: 400px
+  .location
+    transition: opacity 1s ease
+    border-bottom: 1px solid gray
+    padding-top: 10px
+    position: relative
+    .infoWrapper
+      display: flex
+      flex-direction: column
+    .deleteButton
+      position: absolute
+      right: 10px
+      top: 30px
+      border-color: purple
+      color: purple
+  .cityName
+    color: purple
+    font-size: 20px
+  .weatherDetails
+    display: flex
+    align-items: center
+    .weatherDetail
+      margin-left: 10px
+
+  @media only screen and (max-width: 660px)
+    .location
+      margin-left: 20px
+      margin-right: 20px

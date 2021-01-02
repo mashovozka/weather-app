@@ -1,0 +1,65 @@
+.weatherWrapper
+  font-size: 20px
+  background-image: url('../../img/map.jpg')
+  width: 660px
+  height: 410px
+  padding-top: 20px
+  margin: auto
+  margin-bottom: 50px
+  .textWrapper
+    margin-left: 30px
+    .location
+      color: #08D
+      padding: 5px 0
+    .date
+      color: #2ebf79
+      margin-bottom: 5px
+    .weatherDetails
+      display: flex
+    .tempDetails
+      padding: 10px 0
+      border-right: 3px solid orange
+      width: 30%
+      text-align: center
+      display: flex
+      justify-content: center
+      flex-direction: column
+      .tempWrapper
+        display: flex
+        flex-direction: row
+        justify-content: center
+        .temp
+          font-size: 36px
+      .minAmdMax
+        padding-left: 40px
+        text-align: left
+    .otherDetails
+      padding: 5px 15px
+      line-height: 1.3
+.preloader
+  display: flex
+  justify-content: center
+.error
+  font-size: 30px
+  text-align: center
+.sadFace
+  width: 20%
+  margin-left: 250px
+  margin-top: 50px
+
+@media only screen and (max-width: 660px)
+  .weatherWrapper
+    background-image: none
+    width: 100vw
+    height: fit-content
+    margin-bottom: 0px
+    .textWrapper
+      margin-left: 0
+      .weatherDetails
+        .tempDetails
+          padding-right: 10px
+          .minAmdMax
+            padding-left: 0
+  .textWrapper
+    margin-left: 0
+
