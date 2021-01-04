@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {addNewLocationToList, deleteLocation, getWeatherFailure} from '../../store/actions/weather.action'
+import {currentLocation, otherLocations} from '../../store/actions/';
 import classes from './OtherLocations.module.sass';
 import {Button} from '@material-ui/core';
 
@@ -15,13 +15,13 @@ export default function OtherLocations() {
   useEffect(() => {
     newLocation &&
     (isUnique
-    ? dispatch(addNewLocationToList(newLocation))
-    : dispatch(getWeatherFailure({ type: 'error', message: 'Location already exists' })))
+    ? dispatch(otherLocations.addNewLocationToList(newLocation))
+    : dispatch(currentLocation.getWeatherFailure({ type: 'error', message: 'Location already exists' })))
   }, [newLocation])
 
   const removeLocation = (locationId) => {
     setId(locationId);
-    setTimeout(() => {dispatch(deleteLocation(locationId))}, 1000)
+    setTimeout(() => {dispatch(otherLocations.deleteLocation(locationId))}, 1000)
   }
 
   return <div className={classes.locations}>

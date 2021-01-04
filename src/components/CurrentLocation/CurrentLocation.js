@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import {getCurrentLocationWeatherByCoords} from '../../store/actions/weather.action';
+import {currentLocation} from '../../store/actions/';
 import {useSelector, useDispatch} from 'react-redux';
 import classes from './currentLocation.module.sass';
 import {calcLocalTime} from '../../common/helpers/calcLocalTime';
 import {calcWindDirection} from '../../common/helpers/calcWindDirection';
-import spinner from '../../img/spinner.svg'
-import sadFace from '../../img/sadEmoji.png'
+import spinner from '../../img/spinner.svg';
+import sadFace from '../../img/sadEmoji.png';
 
 export default function CurrentLocation() {
 
@@ -14,10 +14,9 @@ export default function CurrentLocation() {
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function(position) {
       const {latitude, longitude} = position.coords;
-      dispatch(getCurrentLocationWeatherByCoords({lat:latitude, lng:longitude}))
+      dispatch(currentLocation.getWeather.request({lat:latitude, lng:longitude}));
     },
     function(error) {
-      console.error("Error Code = " + error.code + " - " + error.message);
       setError("Can't find current location")
     });
   }, [dispatch])
@@ -25,7 +24,7 @@ export default function CurrentLocation() {
   const [error, setError] = useState('')
 
   const weather = useSelector(state => state.weatherReducer.currentLocationWeather)
-console.log(weather)
+  console.log(weather)
   const convertTime = (timeInSec) => `${new Date(timeInSec * 1000).getHours()}:${new Date(timeInSec * 1000).getMinutes()}`
 
   return (

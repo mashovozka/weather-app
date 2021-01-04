@@ -1,10 +1,4 @@
-import {
-  SET_MAIN_WEATHER,
-  SET_OTHER_LOCATION_WEATHER,
-  DELETE_LOCATION,
-  GET_WEATHER_FAILURE,
-  ADD_NEW_LOCATION_TO_LIST
-} from '../actions/weather.action';
+import {currentLocation, otherLocations } from '../actions/';
 
 const initialState = {
   currentLocationWeather: '',
@@ -15,27 +9,27 @@ const initialState = {
 
 const weatherReducer = (state = initialState, action) => {
   switch(action.type){
-    case SET_MAIN_WEATHER:
+    case currentLocation.GET_MAIN_WEATHER_SUCCESS:
         return {
           ...state,
           currentLocationWeather: action.payload
         }
-      case SET_OTHER_LOCATION_WEATHER:
+      case otherLocations.GET_OTHER_LOCATION_WEATHER_SUCCESS:
           return {
             ...state,
             newOtherLocation: action.payload,
           }
-    case ADD_NEW_LOCATION_TO_LIST:
+    case otherLocations.ADD_NEW_LOCATION_TO_LIST:
           return {
             ...state,
             otherLocations: [ action.payload, ...state.otherLocations]
           }
-    case GET_WEATHER_FAILURE:
+    case currentLocation.GET_MAIN_WEATHER_FAILURE:
       return {
         ...state,
         error: action.payload
       }
-      case DELETE_LOCATION:
+    case otherLocations.DELETE_LOCATION:
         return {
           ...state,
           otherLocations: state.otherLocations.filter(location => location.id !== action.payload)

@@ -5,31 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bada8007-f7a0-4e56-8821-c8909c3b1f74" name="Default Changelist" comment="add weather api">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/weather-app.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Utils/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CurrentLocation/CurrentLocation.spec.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/GoogleMaps/GoogleMap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/GoogleMaps/GoogleMap.module.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/StickyAlert/StickyAlert.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/sadEmoji.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/sky.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/spinner.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/reducers/rootReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/actions/currentLocation.action.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/actions/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/logo192.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/logo192.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/logo512.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/logo512.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setupTests.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/setupTests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CurrentLocation/CurrentLocation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CurrentLocation/CurrentLocation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/OtherLocations/OtherLocations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OtherLocations/OtherLocations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WeatherSearch/WeatherSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WeatherSearch/WeatherSearch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actions/weather.action.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/otherLocations.action.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/weather.reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/weather.reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/sagas/weather.saga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/sagas/weather.saga.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +130,7 @@
       <workItem from="1608712999241" duration="16258000" />
       <workItem from="1608820861431" duration="40368000" />
       <workItem from="1609253179682" duration="593000" />
-      <workItem from="1609255990096" duration="13910000" />
+      <workItem from="1609255990096" duration="24474000" />
     </task>
     <servers />
   </component>
