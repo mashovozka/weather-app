@@ -1,5 +1,5 @@
 import {applyMiddleware, createStore} from "redux";
-import rootReducer from '../src/store/reducers/rootReducer';
+import weatherReducer from '../src/store/reducers/weather.reducer';
 import {middleware} from "../src/store/store";
 
 export const findByAttr = (component, attr) => {
@@ -9,5 +9,5 @@ export const findByAttr = (component, attr) => {
 
 export const testStore = (initialState) => {
   const createStoreWithMiddleWare = applyMiddleware(...middleware)(createStore);
-  return createStoreWithMiddleWare(rootReducer, initialState);
+  return createStoreWithMiddleWare(weatherReducer, initialState);
 };

@@ -1,25 +1,70 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import {mount} from 'enzyme';
 import CurrentLocation from './CurrentLocation'
-import {findByAttr, testStore} from "../../../Utils";
+import {findByAttr} from "../../../Utils";
+import {Provider} from 'react-redux';
+import { createStore } from 'redux';
+import weatherReducer from '../../store/reducers/weather.reducer';
+import {currentLocation} from "../../store/actions";
 
-const setUp = (initialState={}) => {
-  const store = testStore(initialState);
-  const component = shallow(<CurrentLocation store={store}/>).childAt(0);
-  console.log(component.debug());
-  return component;
-};
+const mockGetWeather = jest.fn();
 
-describe('Header Component', () => {
+const getWrapper = (mockStore) => {
+  mockGetWeather.mockClear();
+  currentLocation.getWeather.request = mockGetWeather ;
+  return mount(
+    <Provider store={mockStore}>
+      <CurrentLocation/>
+    </Provider>
+  )
+}
 
-  let component;
+jest.mock("react-redux", () => ({
+  ...jest.requireActual("react-redux"),
+  useSelector: jest.fn()
+}));
+
+describe('<CurrentLocation/> Component', () => {
+
+  let mockGeolocation;
+  let mockStore;
+  let wrapper;
+
   beforeEach(() => {
-    component = setUp();
-  })
 
-  it('Should render without errors', () => {
-    const wrapper = findByAttr(component, 'CurrentLocation')
-    expect(wrapper.length).toBe(1);
+    mockGeolocation = {
+      getCurrentPosition: jest.fn()
+        .mockImplementationOnce((success) => Promise.resolve(success({
+          coords: {
+            latitude: 51.1,
+            longitude: 45.3
+          }
+        })))
+    };
+
+
+    global.navigator.geolocation = mockGeolocation;
+
+    const initialState = {
+      currentLocationWeather: '',
+      otherLocations: [],
+      newOtherLocation: '',
+      error: ''
+    }
+
+    mockStore = createStore(weatherReducer, initialState);
+    mockStore.dispatch = jest.fn();
+    wrapper = getWrapper(mockStore);
+
+  });
+
+  test('renders without error', () => {
+    const component = findByAttr(wrapper, 'component-currentLocation');
+    expect(component.length).toBe(1);
+  });
+
+  test('getWeather gets called on CurrentLocation mount', () => {
+    expect(mockGetWeather).toHaveBeenCalledWith({lat: 51.1, lng: 45.3});
   });
 
 })

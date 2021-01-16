@@ -5,17 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bada8007-f7a0-4e56-8821-c8909c3b1f74" name="Default Changelist" comment="add weather api">
-      <change afterPath="$PROJECT_DIR$/src/store/actions/currentLocation.action.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store/actions/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CurrentLocation/CurrentLocation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CurrentLocation/CurrentLocation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CurrentLocation/CurrentLocation.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CurrentLocation/CurrentLocation.spec.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GoogleMaps/GoogleMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GoogleMaps/GoogleMap.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/OtherLocations/OtherLocations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OtherLocations/OtherLocations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WeatherSearch/WeatherSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WeatherSearch/WeatherSearch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/weather.action.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/otherLocations.action.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/weather.reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/weather.reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/sagas/weather.saga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/sagas/weather.saga.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/StickyAlert/StickyAlert.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StickyAlert/StickyAlert.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/rootReducer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +132,9 @@
       <workItem from="1608712999241" duration="16258000" />
       <workItem from="1608820861431" duration="40368000" />
       <workItem from="1609253179682" duration="593000" />
-      <workItem from="1609255990096" duration="24474000" />
+      <workItem from="1609255990096" duration="25095000" />
+      <workItem from="1609932858927" duration="448000" />
+      <workItem from="1610736861702" duration="13196000" />
     </task>
     <servers />
   </component>

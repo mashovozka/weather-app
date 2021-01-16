@@ -14,6 +14,7 @@ export default function CurrentLocation() {
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function(position) {
       const {latitude, longitude} = position.coords;
+      console.log({latitude, longitude})
       dispatch(currentLocation.getWeather.request({lat:latitude, lng:longitude}));
     },
     function(error) {
@@ -23,12 +24,12 @@ export default function CurrentLocation() {
 
   const [error, setError] = useState('')
 
-  const weather = useSelector(state => state.weatherReducer.currentLocationWeather)
+  const weather = useSelector(state => state.currentLocationWeather)
   console.log(weather)
   const convertTime = (timeInSec) => `${new Date(timeInSec * 1000).getHours()}:${new Date(timeInSec * 1000).getMinutes()}`
 
   return (
-    <div className={classes.wrapper} data-test='CurrentLocation'>
+    <div className={classes.wrapper} data-test='component-currentLocation'>
         <div className={classes.weatherWrapper}>
           {!error && weather &&
           <div className={classes.textWrapper}>

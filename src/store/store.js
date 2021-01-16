@@ -1,14 +1,14 @@
 import {applyMiddleware, compose, createStore} from "redux";
-import rootReducer from "./reducers/rootReducer";
 import createSagaMiddleware from "redux-saga";
 import rootSaga from "./sagas/rootSaga";
+import weatherReducer from "./reducers/weather.reducer";
 
 const sagaMiddleware = createSagaMiddleware();
 
 export const middleware = [sagaMiddleware];
 
 const store = createStore(
-  rootReducer,
+  weatherReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__
     ? compose(
     applyMiddleware(...middleware),

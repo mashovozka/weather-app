@@ -6,7 +6,7 @@ const ContainerStickyAlert = ({ children }) => {
 
     const { enqueueSnackbar, closeSnackbar } = useSnackbar();
 
-    const alert = useSelector(state => state.weatherReducer.error);
+    const alert = useSelector(state => state.error);
 
     useEffect(() => {
         if (alert && alert.message) {

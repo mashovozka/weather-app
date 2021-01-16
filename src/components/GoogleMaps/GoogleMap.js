@@ -5,8 +5,8 @@ import classes from './GoogleMap.module.sass';
 
 function Map() {
   const mapRef = useRef();
-  const currentLocation = useSelector(state => state.weatherReducer.currentLocationWeather)
-  const locations = useSelector(state => state.weatherReducer.otherLocations);
+  const currentLocation = useSelector(state => state.currentLocationWeather)
+  const locations = useSelector(state => state.otherLocations);
   const [selectedLocation, setSelectedLocation] = useState(null);
 
   return currentLocation && (

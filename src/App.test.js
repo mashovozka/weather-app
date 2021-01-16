@@ -29,21 +29,7 @@ describe('App Component', function () {
   });
 
   it("should render without errors", () => {
-    const component = findByAttr(wrapper, 'appComponent');
-    expect(component.length).toBe(1);
+    // const component = findByAttr(wrapper, 'appComponent');
+    // expect(component.length).toBe(1);
   });
-  //
-  // it('exampleMethod_updatesState method should update state as expected', () => {
-  //   const classInstance = wrapper.instance();
-  //   classInstance.exampleMethod_updatesState();
-  //   const newState = classInstance.state.hideBtn;
-  //   expect(newState).toBe(true);
-  // });
-  //
-  // it('exampleMethod_returnsAValue method should return a value', () => {
-  //   const classInstance = wrapper.instance();
-  //   const number = 2
-  //   const value = classInstance.exampleMethod_returnsAValue(number);
-  //   expect(value).toBe(3)
-  // });
 });

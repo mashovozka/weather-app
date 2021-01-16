@@ -6,8 +6,8 @@ import {Button} from '@material-ui/core';
 
 export default function OtherLocations() {
 
-  const locations = useSelector(state => state.weatherReducer.otherLocations);
-  const newLocation = useSelector(state => state.weatherReducer.newOtherLocation);
+  const locations = useSelector(state => state.otherLocations);
+  const newLocation = useSelector(state => state.newOtherLocation);
   const dispatch = useDispatch();
   const [id, setId] = useState('');
   const isUnique = locations.every(location => location.id !== newLocation.id)
