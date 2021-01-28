@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bada8007-f7a0-4e56-8821-c8909c3b1f74" name="Default Changelist" comment="add weather api">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CurrentLocation/CurrentLocation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CurrentLocation/CurrentLocation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GoogleMaps/GoogleMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GoogleMaps/GoogleMap.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +173,7 @@
       <workItem from="1610736861702" duration="23312000" />
       <workItem from="1610959761553" duration="256000" />
       <workItem from="1611164542719" duration="11705000" />
-      <workItem from="1611869659857" duration="1249000" />
+      <workItem from="1611869659857" duration="1759000" />
     </task>
     <servers />
   </component>
