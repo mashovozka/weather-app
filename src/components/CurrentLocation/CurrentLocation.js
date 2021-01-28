@@ -14,6 +14,7 @@ export default function CurrentLocation() {
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function(position) {
       const {latitude, longitude} = position.coords;
+      console.log({latitude, longitude});
       dispatch(getCurrentLocationWeather({lat:latitude, lng:longitude}));
     })
     // function(error) {
