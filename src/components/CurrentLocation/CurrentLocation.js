@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import {currentLocation} from '../../store/actions/';
 import {useSelector, useDispatch} from 'react-redux';
 import classes from './currentLocation.module.sass';
 import {calcLocalTime} from '../../common/helpers/calcLocalTime';
 import {calcWindDirection} from '../../common/helpers/calcWindDirection';
 import spinner from '../../img/spinner.svg';
 import sadFace from '../../img/sadEmoji.png';
+import {getCurrentLocationWeather} from "../../store/actions/currentLocation.action";
 
 export default function CurrentLocation() {
 
@@ -14,15 +14,14 @@ export default function CurrentLocation() {
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function(position) {
       const {latitude, longitude} = position.coords;
-      console.log({latitude, longitude})
-      dispatch(currentLocation.getWeather.request({lat:latitude, lng:longitude}));
-    },
-    function(error) {
-      setError("Can't find current location")
-    });
+      dispatch(getCurrentLocationWeather({lat:latitude, lng:longitude}));
+    })
+    // function(error) {
+    //   setError("Can't find current location")
+    // });
   }, [dispatch])
 
-  const [error, setError] = useState('')
+  // const [error, setError] = useState('')
 
   const weather = useSelector(state => state.currentLocationWeather)
   console.log(weather)
@@ -31,8 +30,10 @@ export default function CurrentLocation() {
   return (
     <div className={classes.wrapper} data-test='component-currentLocation'>
         <div className={classes.weatherWrapper}>
-          {!error && weather &&
-          <div className={classes.textWrapper}>
+          {
+            // !error &&
+          weather &&
+          <div className={classes.textWrapper} data-test="weather">
             <div className={classes.location}>{weather.name}, {weather.sys.country}</div>
               <div className={classes.date}>{calcLocalTime(weather.timezone)}</div>
               <div className={classes.weatherDetails}>
@@ -66,19 +67,20 @@ export default function CurrentLocation() {
                 </div>
               </div>
             </div>}
-            {!weather && !error &&
-              <div className={classes.preloader}>
+            {!weather &&
+            // !error &&
+              <div className={classes.preloader} data-test='spinner'>
                   <img src={spinner} alt={'loading...'}/>
               </div>
             }
-          {error &&
-              <div>
-                <div className={classes.error}>
-                  {error}
-                </div>
-                <img src={sadFace} alt={''} className={classes.sadFace}/>
-              </div>
-          }
+          {/*{error &&*/}
+          {/*    <div>*/}
+          {/*      <div className={classes.error}>*/}
+          {/*        {error}*/}
+          {/*      </div>*/}
+          {/*      <img src={sadFace} alt={''} className={classes.sadFace}/>*/}
+          {/*    </div>*/}
+          {/*}*/}
           </div>
   </div>
   )

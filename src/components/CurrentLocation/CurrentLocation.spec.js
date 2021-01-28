@@ -1,38 +1,24 @@
 import React from 'react';
-import {mount} from 'enzyme';
+import {mount, shallow} from 'enzyme';
 import CurrentLocation from './CurrentLocation'
 import {findByAttr} from "../../../Utils";
 import {Provider} from 'react-redux';
-import { createStore } from 'redux';
+import * as redux from "react-redux";
 import weatherReducer from '../../store/reducers/weather.reducer';
-import {currentLocation} from "../../store/actions";
+import {getCurrentLocationWeather} from "../../store/actions/currentLocation.action";
+import configureMockStore from 'redux-mock-store'
+import thunk from 'redux-thunk';
+import { useSelector, useDispatch } from 'react-redux';
+import {createStore} from "redux";
 
-const mockGetWeather = jest.fn();
 
-const getWrapper = (mockStore) => {
-  mockGetWeather.mockClear();
-  currentLocation.getWeather.request = mockGetWeather ;
-  return mount(
-    <Provider store={mockStore}>
-      <CurrentLocation/>
-    </Provider>
-  )
-}
+describe('dispatch mock', function(){
+  it('should mock dispatch', function(){
+    const useDispatchSpy = jest.spyOn(redux, 'useDispatch');
+    const mockDispatchFn = jest.fn();
+    useDispatchSpy.mockReturnValue(mockDispatchFn);
 
-jest.mock("react-redux", () => ({
-  ...jest.requireActual("react-redux"),
-  useSelector: jest.fn()
-}));
-
-describe('<CurrentLocation/> Component', () => {
-
-  let mockGeolocation;
-  let mockStore;
-  let wrapper;
-
-  beforeEach(() => {
-
-    mockGeolocation = {
+    const mockGeolocation = {
       getCurrentPosition: jest.fn()
         .mockImplementationOnce((success) => Promise.resolve(success({
           coords: {
@@ -41,7 +27,6 @@ describe('<CurrentLocation/> Component', () => {
           }
         })))
     };
-
 
     global.navigator.geolocation = mockGeolocation;
 
@@ -52,19 +37,14 @@ describe('<CurrentLocation/> Component', () => {
       error: ''
     }
 
-    mockStore = createStore(weatherReducer, initialState);
-    mockStore.dispatch = jest.fn();
-    wrapper = getWrapper(mockStore);
+    const mockStore = createStore(weatherReducer, initialState);
+    mount(
+      <Provider store={mockStore}>
+       <CurrentLocation/>
+      </Provider>
+      );
 
-  });
-
-  test('renders without error', () => {
-    const component = findByAttr(wrapper, 'component-currentLocation');
-    expect(component.length).toBe(1);
-  });
-
-  test('getWeather gets called on CurrentLocation mount', () => {
-    expect(mockGetWeather).toHaveBeenCalledWith({lat: 51.1, lng: 45.3});
-  });
-
-})
+    expect(mockDispatchFn).toHaveBeenCalled();
+    useDispatchSpy.mockClear();
+  })
+});

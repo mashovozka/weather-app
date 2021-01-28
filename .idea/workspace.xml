@@ -5,18 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bada8007-f7a0-4e56-8821-c8909c3b1f74" name="Default Changelist" comment="add weather api">
+      <change afterPath="$PROJECT_DIR$/src/store/actions/index.test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CurrentLocation/CurrentLocation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CurrentLocation/CurrentLocation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CurrentLocation/CurrentLocation.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CurrentLocation/CurrentLocation.spec.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GoogleMaps/GoogleMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GoogleMaps/GoogleMap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/OtherLocations/OtherLocations.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OtherLocations/OtherLocations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/StickyAlert/StickyAlert.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StickyAlert/StickyAlert.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/rootReducer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WeatherSearch/WeatherSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WeatherSearch/WeatherSearch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actions/currentLocation.action.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/currentLocation.action.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actions/otherLocations.action.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/otherLocations.action.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/sagas/rootSaga.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/sagas/weather.saga.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -101,7 +103,34 @@
       <command value="npm start" />
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Jest.App">
+    <configuration name="App" type="JavaScriptTestRunnerJest" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/src/components/CurrentLocation/CurrentLocation.spec.js" />
+      <test-names>
+        <test-name value="App" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="App.should render a spinner if the weather is not loaded" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/components/CurrentLocation/CurrentLocation.spec.js" />
+      <test-names>
+        <test-name value="App" />
+        <test-name value="should render a spinner if the weather is not loaded" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration name="Tests for &lt;City/&gt; component.Should render location without name" type="JavaScriptTestRunnerJest" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -116,6 +145,25 @@
       </test-names>
       <method v="2" />
     </configuration>
+    <configuration name="dispatch mock" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/src/components/CurrentLocation/CurrentLocation.spec.js" />
+      <test-names>
+        <test-name value="dispatch mock" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Jest.App.should render a spinner if the weather is not loaded" />
+        <item itemvalue="Jest.dispatch mock" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -134,7 +182,10 @@
       <workItem from="1609253179682" duration="593000" />
       <workItem from="1609255990096" duration="25095000" />
       <workItem from="1609932858927" duration="448000" />
-      <workItem from="1610736861702" duration="13196000" />
+      <workItem from="1610736861702" duration="23312000" />
+      <workItem from="1610959761553" duration="256000" />
+      <workItem from="1611164542719" duration="11705000" />
+      <workItem from="1611869659857" duration="116000" />
     </task>
     <servers />
   </component>

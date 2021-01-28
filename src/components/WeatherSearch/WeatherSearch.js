@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import classes from './WeatherSearch.module.sass';
-import {otherLocations} from '../../store/actions/';
 import {useDispatch} from 'react-redux';
 import PlacesAutocomplete from 'react-places-autocomplete';
 import {
   geocodeByAddress,
   getLatLng,
 } from 'react-places-autocomplete';
+import {getOtherLocationWeather} from "../../store/actions/otherLocations.action";
 
 export default function WeatherSearch() {
 
@@ -21,7 +21,7 @@ export default function WeatherSearch() {
   const handleSelect = async value => {
     const results = await geocodeByAddress(value);
     const coords = await getLatLng(results[0]);
-    dispatch(otherLocations.getOtherLocationWeather.request(coords))
+    dispatch(getOtherLocationWeather(coords))
     setCity('')
   }
 
