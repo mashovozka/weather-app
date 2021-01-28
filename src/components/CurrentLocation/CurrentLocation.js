@@ -22,7 +22,7 @@ export default function CurrentLocation() {
     //   setError("Can't find current location")
     // });
   }, [dispatch])
-
+console.log('in current location')
   // const [error, setError] = useState('')
 
   const weather = useSelector(state => state.currentLocationWeather)
