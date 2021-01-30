@@ -12,18 +12,18 @@ export default function CurrentLocation() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log('in useEffect')
     navigator.geolocation.getCurrentPosition(function(position) {
       const {latitude, longitude} = position.coords;
       console.log({latitude, longitude});
       dispatch(getCurrentLocationWeather({lat:latitude, lng:longitude}));
-    })
-    // function(error) {
-    //   setError("Can't find current location")
-    // });
+    },
+    function(error) {
+      setError("Can't find current location")
+    }
+    );
   }, [dispatch])
-console.log('in current location')
-  // const [error, setError] = useState('')
+
+   const [error, setError] = useState('')
 
   const weather = useSelector(state => state.currentLocationWeather)
   console.log(weather)
@@ -32,8 +32,7 @@ console.log('in current location')
   return (
     <div className={classes.wrapper} data-test='component-currentLocation'>
         <div className={classes.weatherWrapper}>
-          {
-            // !error &&
+          {!error &&
           weather &&
           <div className={classes.textWrapper} data-test="weather">
             <div className={classes.location}>{weather.name}, {weather.sys.country}</div>
@@ -70,19 +69,19 @@ console.log('in current location')
               </div>
             </div>}
             {!weather &&
-            // !error &&
+             !error &&
               <div className={classes.preloader} data-test='spinner'>
                   <img src={spinner} alt={'loading...'}/>
               </div>
             }
-          {/*{error &&*/}
-          {/*    <div>*/}
-          {/*      <div className={classes.error}>*/}
-          {/*        {error}*/}
-          {/*      </div>*/}
-          {/*      <img src={sadFace} alt={''} className={classes.sadFace}/>*/}
-          {/*    </div>*/}
-          {/*}*/}
+          {error &&
+              <div>
+                <div className={classes.error}>
+                  {error}
+                </div>
+                <img src={sadFace} alt={''} className={classes.sadFace}/>
+              </div>
+          }
           </div>
   </div>
   )
